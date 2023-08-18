@@ -1,0 +1,54 @@
+# Define a vector of numbers from 1 to 999
+numbers <- 1:999
+
+# Filter numbers that are multiples of 3 or 5
+multiples <- numbers[(numbers %% 3 == 0) | (numbers %% 5 == 0)]
+
+# Sum up the filtered numbers
+result <- sum(multiples)
+
+# Print the result
+print(result)
+
+# Initialize the first two Fibonacci numbers
+prev <- 1
+current <- 2
+
+# Initialize the sum with the first even Fibonacci number (2 in this case)
+sum_even <- 2
+
+while(TRUE) {
+  # Generate the next Fibonacci number
+  next_fib <- prev + current
+  
+  # Break if the next Fibonacci number exceeds four million
+  if (next_fib > 4e6) {
+    break
+  }
+  
+  # Add to the sum if the Fibonacci number is even
+  if (next_fib %% 2 == 0) {
+    sum_even <- sum_even + next_fib
+  }
+  
+  # Update the previous two Fibonacci numbers for the next iteration
+  prev <- current
+  current <- next_fib
+}
+
+# Print the result
+print(sum_even)
+
+number <- 600851475143
+factor <- 2
+
+while (number > 1) {
+  if (number %% factor == 0) {
+    number <- number / factor
+  } else {
+    factor <- factor + 1
+  }
+}
+
+print(factor)
+
